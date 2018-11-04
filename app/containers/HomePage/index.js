@@ -11,15 +11,20 @@
 
 import React from 'react'
 import { FormattedMessage } from 'react-intl'
+import { Helmet } from 'react-helmet'
+
 import messages from './messages'
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
   render() {
     return (
+      <section>
       <h1>
         <FormattedMessage {...messages.header} />
       </h1>
+        <h2 onClick={this.props.fetchData}> HELLLOOO CLICK ME!!! </h2>
+      </section>
     )
   }
 }
