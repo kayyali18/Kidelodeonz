@@ -24,7 +24,7 @@ function Header() {
         <FormattedMessage {...messages.faq} />
       </HeaderLink>
     </Wrapper>
-  )
+  );
 }
 
 export default Header
