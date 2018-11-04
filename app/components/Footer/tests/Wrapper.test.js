@@ -10,8 +10,8 @@ describe('<Wrapper />', () => {
     expect(renderedComponent).toMatchSnapshot()
   })
 
-  it('should render a <nav />', () => {
+  it('should render a <footer />', () => {
     const renderedComponent = renderer.create(<Wrapper />).toJSON()
-    expect(renderedComponent.type).toEqual('nav')
+    expect(renderedComponent.type).toEqual('footer')
   })
 })

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> should match snapshot 1`] = `
+<Wrapper>
+  <FooterLink
+    to="/contact"
+  >
+    <FormattedMessage
+      defaultMessage="Ahmad Kayyali 2019 © "
+      id="app.components.Footer.info"
+      values={Object {}}
+    />
+  </FooterLink>
+  <FooterLink
+    to="/"
+  >
+    <FormattedMessage
+      defaultMessage="Home"
+      id="app.components.Footer.home"
+      values={Object {}}
+    />
+  </FooterLink>
+  <FooterLink
+    to="/contact"
+  >
+    <FormattedMessage
+      defaultMessage="Contact"
+      id="app.components.Footer.contact"
+      values={Object {}}
+    />
+  </FooterLink>
+</Wrapper>
+`;
