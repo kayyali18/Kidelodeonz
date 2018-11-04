@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should match snapshot 1`] = `
+<Wrapper>
+  <HeaderLink
+    to="/"
+  >
+    <FormattedMessage
+      defaultMessage="Home"
+      id="app.components.Header.home"
+      values={Object {}}
+    />
+  </HeaderLink>
+  <HeaderLink
+    to="/about"
+  >
+    <FormattedMessage
+      defaultMessage="About"
+      id="app.components.Header.about"
+      values={Object {}}
+    />
+  </HeaderLink>
+  <HeaderLink
+    to="/"
+  >
+    <FormattedMessage
+      defaultMessage="Kidelodeon"
+      id="app.components.Header.title"
+      values={Object {}}
+    />
+  </HeaderLink>
+  <HeaderLink
+    to="/contact"
+  >
+    <FormattedMessage
+      defaultMessage="Contact"
+      id="app.components.Header.contact"
+      values={Object {}}
+    />
+  </HeaderLink>
+  <HeaderLink
+    to="/faq"
+  >
+    <FormattedMessage
+      defaultMessage="FAQ"
+      id="app.components.Header.faq"
+      values={Object {}}
+    />
+  </HeaderLink>
+</Wrapper>
+`;
