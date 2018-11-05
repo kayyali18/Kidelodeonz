@@ -5,9 +5,10 @@
 //  import { put, takeLatest } from 'redux-saga/effects'
 
 //  import { LOAD_API } from 'containers/App/constants'
-//  import { reposLoaded, repoLoadingError } from 'containers/App/actions'
+import { apiLoaded, apiLoadingError } from 'containers/App/actions'
 
 //  import tasteDiveData,
+import { put } from 'redux-saga/effects'
 import { getSuggestions } from '../saga'
 
 const query = 'cars'
@@ -27,5 +28,13 @@ describe('getSuggestions Saga', () => {
 
     const callDescriptor = getSuggestionsGenerator.next(query).value
     expect(callDescriptor).toMatchSnapshot()
+  })
+
+  it('should dispatch the apiLoaded action if it requests the data succesfully', () => {
+    const response = {
+      data: 'this is mockdata',
+    }
+    const putDescriptor = getSuggestionsGenerator.next(response).value
+    expect(putDescriptor).toEqual(put(apiLoaded(response)))
   })
 })
