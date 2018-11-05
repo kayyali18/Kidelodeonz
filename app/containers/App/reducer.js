@@ -10,9 +10,9 @@
  *   return state.set('yourStateVariable', true);
  */
 
-import { fromJS } from 'immutable';
+import { fromJS } from 'immutable'
 
-import { LOAD_API_SUCCESS, LOAD_API, LOAD_API_ERROR } from './constants';
+import { LOAD_API_SUCCESS, LOAD_API, LOAD_API_ERROR } from './constants'
 
 // The initial state of the App
 const initialState = fromJS({
@@ -21,8 +21,8 @@ const initialState = fromJS({
   tasteDive: {
     apiData: false,
   },
-  searchQuery: ''
-});
+  searchQuery: '',
+})
 
 function appReducer(state = initialState, action) {
   switch (action.type) {

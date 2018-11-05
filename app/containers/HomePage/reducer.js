@@ -9,23 +9,26 @@
  * case YOUR_ACTION_CONSTANT:
  *   return state.set('yourStateVariable', true);
  */
-import { fromJS } from 'immutable';
+import { fromJS } from 'immutable'
 
-import { FETCH_TASTEDIVE } from './constants';
+import { FETCH_TASTEDIVE } from './constants'
 
 // The initial state of the App
 export const initialState = fromJS({
   category: 'movies',
-  query: 'kidelodeon'
-});
+  query: 'kidelodeon',
+})
 
 function homeReducer(state = initialState, action) {
   switch (action.type) {
     case FETCH_TASTEDIVE:
-      return state.set('searchQuery', {category: action.category, query: action.query});
+      return state.set('searchQuery', {
+        category: action.category,
+        query: action.query,
+      })
     default:
-      return state;
+      return state
   }
 }
 
-export default homeReducer;
+export default homeReducer

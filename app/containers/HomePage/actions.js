@@ -15,7 +15,7 @@
  *    }
  */
 
-import { FETCH_TASTEDIVE } from './constants';
+import { FETCH_TASTEDIVE } from './constants'
 
 /**
  * Changes the input field of the form
@@ -28,5 +28,5 @@ export function fetchTasteDive(category) {
   return {
     type: FETCH_TASTEDIVE,
     category,
-  };
+  }
 }
