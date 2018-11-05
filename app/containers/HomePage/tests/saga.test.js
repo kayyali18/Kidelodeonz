@@ -1,15 +1,11 @@
 /**
  * Tests for HomePage sagas
  */
+import { put, takeLatest } from 'redux-saga/effects'
 
-//  import { put, takeLatest } from 'redux-saga/effects'
-
-//  import { LOAD_API } from 'containers/App/constants'
 import { apiLoaded, apiLoadingError } from 'containers/App/actions'
-
-//  import tasteDiveData,
-import { put } from 'redux-saga/effects'
-import { getSuggestions } from '../saga'
+import tasteDiveSaga, { getSuggestions } from '../saga'
+import { LOAD_API } from '../../App/constants'
 
 const query = 'cars'
 
@@ -42,5 +38,14 @@ describe('getSuggestions Saga', () => {
     const response = new Error('Some error')
     const putDescriptor = getSuggestionsGenerator.throw(response).value
     expect(putDescriptor).toEqual(put(apiLoadingError(response)))
+  })
+})
+
+describe('tasteDiveSaga Saga ', () => {
+  const tasteDiveSagaTest = tasteDiveSaga()
+
+  it('should start task to watch for LOAD_API action', () => {
+    const takeLatestDescriptor = tasteDiveSagaTest.next().value
+    expect(takeLatestDescriptor).toEqual(takeLatest(LOAD_API, getSuggestions))
   })
 })

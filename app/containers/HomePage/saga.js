@@ -33,7 +33,7 @@ export function* getSuggestions() {
 /**
  * Root saga manages watcher lifecycle
  */
-export default function* tasteDiveData() {
+export default function* tasteDiveSaga() {
   // Watches for LOAD_API actions and calls getSuggestions when one comes in.
   // By using `takeLatest` only the result of the latest API call is applied.
   // It returns task descriptor (just like fork) so we can continue execution
