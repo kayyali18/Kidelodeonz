@@ -15,8 +15,8 @@ import { FETCH_TASTEDIVE } from './constants'
 
 // The initial state of the App
 export const initialState = fromJS({
-  category: 'movies',
-  query: 'cars',
+  category: '',
+  query: '',
 })
 
 function homeReducer(state = initialState, action) {
