@@ -12,35 +12,34 @@
 
 import { fromJS } from 'immutable';
 
-import { LOAD_REPOS_SUCCESS, LOAD_REPOS, LOAD_REPOS_ERROR } from './constants';
+import { LOAD_API_SUCCESS, LOAD_API, LOAD_API_ERROR } from './constants';
 
 // The initial state of the App
 const initialState = fromJS({
   loading: false,
   error: false,
-  currentUser: false,
-  userData: {
-    repositories: false,
+  tasteDive: {
+    apiData: false,
   },
+  searchQuery: ''
 });
 
 function appReducer(state = initialState, action) {
   switch (action.type) {
-    case LOAD_REPOS:
+    case LOAD_API:
       return state
         .set('loading', true)
         .set('error', false)
-        .setIn(['userData', 'repositories'], false);
-    case LOAD_REPOS_SUCCESS:
+        .setIn(['tasteDive', 'apiData'], false)
+    case LOAD_API_SUCCESS:
       return state
-        .setIn(['userData', 'repositories'], action.repos)
+        .setIn(['tasteDive', 'apiData'], action.data)
         .set('loading', false)
-        .set('currentUser', action.username);
-    case LOAD_REPOS_ERROR:
-      return state.set('error', action.error).set('loading', false);
+    case LOAD_API_ERROR:
+      return state.set('error', action.error).set('loading', false)
     default:
-      return state;
+      return state
   }
 }
 
-export default appReducer;
+export default appReducer
