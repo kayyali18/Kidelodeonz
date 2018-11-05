@@ -28,6 +28,6 @@ export function fetchTasteDive(category, query) {
   return {
     type: FETCH_TASTEDIVE,
     category,
-    query
+    query,
   }
 }

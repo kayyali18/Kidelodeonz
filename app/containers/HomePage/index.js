@@ -60,7 +60,7 @@ HomePage.propTypes = {
 export function mapDispatchToProps(dispatch) {
   return {
     categoryClickz: () => dispatch(fetchTasteDive()),
-    categoryClick: () => dispatch(loadApi())
+    categoryClick: () => dispatch(loadApi()),
   }
 }
 
