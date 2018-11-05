@@ -37,4 +37,10 @@ describe('getSuggestions Saga', () => {
     const putDescriptor = getSuggestionsGenerator.next(response).value
     expect(putDescriptor).toEqual(put(apiLoaded(response)))
   })
+
+  it('should call the apiLoadingError action if the response errors', () => {
+    const response = new Error('Some error')
+    const putDescriptor = getSuggestionsGenerator.throw(response).value
+    expect(putDescriptor).toEqual(put(apiLoadingError(response)))
+  })
 })

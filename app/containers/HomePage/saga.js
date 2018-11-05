@@ -26,7 +26,7 @@ export function* getSuggestions() {
     const results = yield call(request, requestURL)
     yield put(apiLoaded(results))
   } catch (err) {
-    yield put(apiLoadingError(true))
+    yield put(apiLoadingError(err))
   }
 }
 
