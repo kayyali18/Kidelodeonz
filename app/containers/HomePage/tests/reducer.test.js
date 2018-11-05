@@ -1,7 +1,7 @@
 import { fromJS } from 'immutable'
 
 import homeReducer from '../reducer'
-import { fetchTasteDive } from '../actions'
+// import { fetchTasteDive } from '../actions'
 
 describe('homeReducer', () => {
   let state
