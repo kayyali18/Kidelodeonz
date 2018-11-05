@@ -33,7 +33,7 @@ function appReducer(state = initialState, action) {
         .setIn(['tasteDive', 'apiData'], false)
     case LOAD_API_SUCCESS:
       return state
-        .setIn(['tasteDive', 'apiData'], action.data)
+        .setIn(['tasteDive', 'apiData'], action.result)
         .set('loading', false)
     case LOAD_API_ERROR:
       return state.set('error', action.error).set('loading', false)
