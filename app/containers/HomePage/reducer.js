@@ -22,9 +22,7 @@ export const initialState = fromJS({
 function homeReducer(state = initialState, action) {
   switch (action.type) {
     case FETCH_TASTEDIVE:
-      return state.set('category', {
-        category: action.category,
-      })
+      return state.set('category', action.category)
     default:
       return state
   }
