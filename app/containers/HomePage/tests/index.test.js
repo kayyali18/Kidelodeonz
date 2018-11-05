@@ -20,4 +20,12 @@ describe('<HomePage />', () => {
       renderedComponent.contains(<FormattedMessage {...messages.header} />),
     ).toEqual(true)
   })
+
+  it('should call categoryClick on click', () => {
+    const renderedComponent = shallow(
+      <HomePage categoryClick={mockCategoryClick} />,
+    )
+    renderedComponent.find('button').simulate('click')
+    expect(mockCategoryClick).toHaveBeenCalled()
+  })
 })
