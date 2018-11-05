@@ -24,9 +24,10 @@ import { FETCH_TASTEDIVE } from './constants'
  *
  * @return {object}    An action object with a type of FETCH_TASTEDIVE
  */
-export function fetchTasteDive(category) {
+export function fetchTasteDive(category, query) {
   return {
     type: FETCH_TASTEDIVE,
     category,
+    query
   }
 }

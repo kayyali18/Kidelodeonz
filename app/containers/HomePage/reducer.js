@@ -16,15 +16,14 @@ import { FETCH_TASTEDIVE } from './constants'
 // The initial state of the App
 export const initialState = fromJS({
   category: 'movies',
-  query: 'kidelodeon',
+  query: 'cars',
 })
 
 function homeReducer(state = initialState, action) {
   switch (action.type) {
     case FETCH_TASTEDIVE:
-      return state.set('searchQuery', {
-        category: action.category,
-        query: action.query,
+      return state.set('category', {
+        category: action.category
       })
     default:
       return state

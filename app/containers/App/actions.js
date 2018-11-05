@@ -52,6 +52,6 @@ export function apiLoaded(result) {
 export function apiLoadingError(error) {
   return {
     type: LOAD_API_ERROR,
-    error: error.message,
+    error,
   }
 }

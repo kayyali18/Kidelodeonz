@@ -25,7 +25,7 @@ import {
   makeSelectLocation,
 } from 'containers/App/selectors'
 import messages from './messages'
-// import { loadApi } from '../App/actions'
+import { loadApi } from '../App/actions'
 import reducer from './reducer'
 import saga from './saga'
 import { fetchTasteDive } from './actions'
@@ -54,11 +54,13 @@ HomePage.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   categoryClick: PropTypes.func,
+  categoryClickz: PropTypes.func,
 }
 
 export function mapDispatchToProps(dispatch) {
   return {
-    categoryClick: () => dispatch(fetchTasteDive()),
+    categoryClickz: () => dispatch(fetchTasteDive()),
+    categoryClick: () => dispatch(loadApi())
   }
 }
 

@@ -17,21 +17,23 @@ export function* getSuggestions() {
   // Select query from store
   const key = tasteDive
   const query = yield select(makeSelectQuery())
-  const requestURL = `https://tastedive.com/api/similar?k=${key}&info=1&limit=100&q=${query}`
+  let requestURL = `https://tastedive.com/api/similar?k=${key}&info=1&limit=100&q=${query}`
+  const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+  requestURL = `${proxyUrl}${requestURL}`
 
   try {
     // Call our request helper (see 'utils/request')
     const results = yield call(request, requestURL)
     yield put(apiLoaded(results))
   } catch (err) {
-    yield put(apiLoadingError(err))
+    yield put(apiLoadingError(true))
   }
 }
 
 /**
  * Root saga manages watcher lifecycle
  */
-export default function* githubData() {
+export default function* tasteDiveData() {
   // Watches for LOAD_API actions and calls getSuggestions when one comes in.
   // By using `takeLatest` only the result of the latest API call is applied.
   // It returns task descriptor (just like fork) so we can continue execution
