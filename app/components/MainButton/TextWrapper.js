@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 
 const TextWrapper = styled.div`
-  color: red;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  color: white;
+  border: 2px solid #fff;
+  height: 100%;
 `
 
 export default TextWrapper
