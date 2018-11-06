@@ -1,10 +1,12 @@
 import { css } from 'styled-components'
 
 const buttonStyles = css`
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 14px;
   -webkit-font-smoothing: antialiased;
   -webkit-touch-callout: none;
   user-select: none;
@@ -12,15 +14,20 @@ const buttonStyles = css`
   outline: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: bold;
-  font-size: 16px;
-  border: 2px solid #fff;
-  color: #fff;
-  height: 100%;
-  width: 100%;
+  font-size: 26px;
+  border: 10px solid #fff;
+  background-color: #ffffff4d;
+  color: #ff4a6e;
+  height: calc(100px + 100 * ((100vw - 320px) / 680));
+  width: calc(400px + 130 * ((100vw - 320px) / 680));
 
   &:active {
     background: #fff;
     color: #fff;
+  }
+
+  &:hover {
+    background-color: #ffffff66;
   }
 `
 export default buttonStyles

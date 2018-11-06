@@ -20,8 +20,8 @@ import GlobalStyle from '../../global-styles'
 
 const AppWrapper = styled.div`
   display: grid;
-  grid-template-rows: 1fr 8fr 1fr;
-  height: 100vh;
+  grid-template-rows: 1fr 8fr 2fr;
+  height: 100%;
   background: linear-gradient(#ff700b, #ff275f);
 `
 

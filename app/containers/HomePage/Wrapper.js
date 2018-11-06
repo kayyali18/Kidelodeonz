@@ -6,6 +6,7 @@ const Wrapper = styled.section`
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: calc(10px + 26 * ((100vw - 320px) / 680));
   max-height: 100%;
-  background: linear-gradient(#ff700b, #ff275f);
+  width: 80%;
+  margin: auto;
 `
 export default Wrapper

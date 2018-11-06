@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export default styled(Link)`
   display: inline-flex;
   /* padding: 0.25em 2em; */
-  height: 90%;
+  height: 60%;
   align-items: center;
   justify-content: center;
   text-align: center;
