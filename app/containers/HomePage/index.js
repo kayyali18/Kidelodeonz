@@ -29,6 +29,7 @@ import { loadApi } from '../App/actions'
 import reducer from './reducer'
 import saga from './saga'
 import { updateStumble } from './actions'
+import { Button } from '../../components/Button'
 
 /* eslint-disable react/prefer-stateless-function */
 export class HomePage extends React.PureComponent {
@@ -44,8 +45,14 @@ export class HomePage extends React.PureComponent {
         <h1>
           <FormattedMessage {...messages.header} />
         </h1>
-        <button type="submit" onClick={this.handleSubmit}>
-          HELLLOOO CLICK ME!!!
+        <button type="submit" value="movie" onClick={this.handleSubmit}>
+          <FormattedMessage {...messages.movies} />
+        </button>
+        <button type="submit" value="game" onClick={this.handleSubmit}>
+          <FormattedMessage {...messages.games} />
+        </button>
+        <button type="submit" value="show" onClick={this.handleSubmit}>
+          <FormattedMessage {...messages.shows} />
         </button>
       </section>
     )

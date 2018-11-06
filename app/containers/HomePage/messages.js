@@ -12,4 +12,16 @@ export default defineMessages({
     id: `${scope}.header`,
     defaultMessage: 'This is the HomePage container!',
   },
+  movies: {
+    id: `${scope}.movies`,
+    defaultMessage: 'Movies',
+  },
+  games: {
+    id: `${scope}.games`,
+    defaultMessage: 'Games',
+  },
+  shows: {
+    id: `${scope}.shows`,
+    defaultMessage: 'Shows',
+  },
 })
