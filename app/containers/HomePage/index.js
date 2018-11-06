@@ -24,18 +24,18 @@ import {
   makeSelectError,
   makeSelectLocation,
 } from 'containers/App/selectors'
+import Button from 'components/Button/index'
 import messages from './messages'
 import { loadApi } from '../App/actions'
 import reducer from './reducer'
 import saga from './saga'
 import { updateStumble } from './actions'
-import { Button } from '../../components/Button'
 
 /* eslint-disable react/prefer-stateless-function */
 export class HomePage extends React.PureComponent {
-  handleSubmit = () => {
+  handleSubmit = category => {
     const { categoryClick, dispatchLoadApi } = this.props
-    categoryClick('movies', 'cinderella')
+    categoryClick(category, 'cinderella')
     dispatchLoadApi()
   }
 
@@ -45,15 +45,27 @@ export class HomePage extends React.PureComponent {
         <h1>
           <FormattedMessage {...messages.header} />
         </h1>
-        <button type="submit" value="movie" onClick={this.handleSubmit}>
+        <Button
+          type="submit"
+          value="movie"
+          onClick={() => this.handleSubmit('movie')}
+        >
           <FormattedMessage {...messages.movies} />
-        </button>
-        <button type="submit" value="game" onClick={this.handleSubmit}>
+        </Button>
+        <Button
+          type="submit"
+          value="game"
+          onClick={() => this.handleSubmit('game')}
+        >
           <FormattedMessage {...messages.games} />
-        </button>
-        <button type="submit" value="show" onClick={this.handleSubmit}>
+        </Button>
+        <Button
+          type="submit"
+          value="show"
+          onClick={() => this.handleSubmit('show')}
+        >
           <FormattedMessage {...messages.shows} />
-        </button>
+        </Button>
       </section>
     )
   }

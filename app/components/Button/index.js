@@ -39,3 +39,5 @@ Button.propTypes = {
   onClick: PropTypes.func,
   children: PropTypes.node.isRequired,
 }
+
+export default Button
