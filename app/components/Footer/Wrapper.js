@@ -4,7 +4,7 @@ const Wrapper = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #402c28;
+  background: linear-gradient(#ff275f, ff040a);
 `
 
 export default Wrapper

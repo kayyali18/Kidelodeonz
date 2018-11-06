@@ -21,7 +21,7 @@ import GlobalStyle from '../../global-styles'
 const AppWrapper = styled.div`
   display: grid;
   grid-template-rows: 1fr 8fr 1fr;
-  max-height: 100vh;
+  height: 100vh;
   background: linear-gradient(#ff700b, #ff275f);
 `
 
