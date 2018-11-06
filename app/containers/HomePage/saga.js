@@ -24,7 +24,8 @@ export function* getSuggestions() {
   try {
     // Call our request helper (see 'utils/request')
     const results = yield call(request, requestURL)
-    yield put(apiLoaded(results))
+    const cleaned = [...results.Similar.Info, ...results.Similar.Results]
+    yield put(apiLoaded(cleaned))
   } catch (err) {
     yield put(apiLoadingError(err))
   }
