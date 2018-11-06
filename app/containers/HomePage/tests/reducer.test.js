@@ -1,7 +1,7 @@
 import { fromJS } from 'immutable'
 
 import homeReducer from '../reducer'
-import { fetchTasteDive } from '../actions'
+import { updateStumble } from '../actions'
 
 describe('homeReducer', () => {
   let state
@@ -17,10 +17,12 @@ describe('homeReducer', () => {
     expect(homeReducer(undefined, {})).toEqual(expectedResult)
   })
 
-  it('should handle the fetchTasteDive action correctly', () => {
+  it('should handle the updateStumble action correctly', () => {
     const category = 'cars'
     const expectedResult = state.set('category', category)
 
-    expect(homeReducer(state, fetchTasteDive(category))).toEqual(expectedResult)
+    expect(homeReducer(state, updateStumble(category, ''))).toEqual(
+      expectedResult,
+    )
   })
 })

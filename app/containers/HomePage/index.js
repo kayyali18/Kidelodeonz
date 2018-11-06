@@ -24,33 +24,69 @@ import {
   makeSelectError,
   makeSelectLocation,
 } from 'containers/App/selectors'
+import Button from 'components/MainButton/index'
+import H1 from 'components/H1'
+import TextWrapper from 'components/MainButton/TextWrapper'
+import Wrapper from './Wrapper'
 import messages from './messages'
 import { loadApi } from '../App/actions'
 import reducer from './reducer'
 import saga from './saga'
+import { updateStumble } from './actions'
 
 /* eslint-disable react/prefer-stateless-function */
 export class HomePage extends React.PureComponent {
-  componentDidMount() {
-    this.props.categoryClick()
+  handleSubmit = category => {
+    const { categoryClick, dispatchLoadApi } = this.props
+    categoryClick(category, 'cinderella')
+    dispatchLoadApi()
   }
 
   render() {
     return (
-      <section>
-        <h1>
+      <Wrapper>
+        <H1>
           <FormattedMessage {...messages.header} />
-        </h1>
-        <button type="submit" onClick={this.props.categoryClick}>
-          HELLLOOO CLICK ME!!!
-        </button>
-      </section>
+        </H1>
+        <Button
+          type="submit"
+          value="movie"
+          path="/movie"
+          onClick={() => this.handleSubmit('movie')}
+        >
+          <TextWrapper>
+            <FormattedMessage {...messages.movies} />
+          </TextWrapper>
+        </Button>
+        <Button
+          type="submit"
+          value="game"
+          path="/game"
+          onClick={() => this.handleSubmit('game')}
+        >
+          <TextWrapper>
+            <FormattedMessage {...messages.games} />
+          </TextWrapper>
+        </Button>
+        <Button
+          type="submit"
+          value="show"
+          path="/show"
+          alt=""
+          onClick={() => this.handleSubmit('show')}
+        >
+          <TextWrapper>
+            <FormattedMessage {...messages.shows} />
+          </TextWrapper>
+        </Button>
+      </Wrapper>
     )
   }
 }
 
 export const mapDispatchToProps = dispatch => ({
-  categoryClick: () => dispatch(loadApi()),
+  dispatchLoadApi: () => dispatch(loadApi()),
+  categoryClick: (category, query) => dispatch(updateStumble(category, query)),
 })
 
 HomePage.propTypes = {
