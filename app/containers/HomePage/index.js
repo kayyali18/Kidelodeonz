@@ -28,11 +28,14 @@ import messages from './messages'
 import { loadApi } from '../App/actions'
 import reducer from './reducer'
 import saga from './saga'
+import { updateStumble } from './actions'
 
 /* eslint-disable react/prefer-stateless-function */
 export class HomePage extends React.PureComponent {
-  componentDidMount() {
-    this.props.categoryClick()
+  handleSubmit = () => {
+    const { categoryClick, dispatchLoadApi } = this.props
+    categoryClick('movies', 'cinderella')
+    dispatchLoadApi()
   }
 
   render() {
@@ -41,7 +44,7 @@ export class HomePage extends React.PureComponent {
         <h1>
           <FormattedMessage {...messages.header} />
         </h1>
-        <button type="submit" onClick={this.props.categoryClick}>
+        <button type="submit" onClick={this.handleSubmit}>
           HELLLOOO CLICK ME!!!
         </button>
       </section>
@@ -50,7 +53,8 @@ export class HomePage extends React.PureComponent {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  categoryClick: () => dispatch(loadApi()),
+  dispatchLoadApi: () => dispatch(loadApi()),
+  categoryClick: (category, query) => dispatch(updateStumble(category, query)),
 })
 
 HomePage.propTypes = {

@@ -15,18 +15,20 @@
  *    }
  */
 
-import { FETCH_TASTEDIVE } from './constants'
+import { UPDATE_STUMBLE } from './constants'
 
 /**
  * Changes the input field of the form
  *
- * @param  {string} category The new category to stumble for
+ * @param  {string} category The new category we are stumbling for
  *
- * @return {object}    An action object with a type of FETCH_TASTEDIVE
+ * @param  {object} query The new info to render
+ *
+ * @return {object}    An action object with a type of UPDATE_STUMBLE
  */
-export function fetchTasteDive(category, query) {
+export function updateStumble(category, query) {
   return {
-    type: FETCH_TASTEDIVE,
+    type: UPDATE_STUMBLE,
     category,
     query,
   }

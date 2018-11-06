@@ -11,7 +11,7 @@
  */
 import { fromJS } from 'immutable'
 
-import { FETCH_TASTEDIVE } from './constants'
+import { UPDATE_STUMBLE } from './constants'
 
 // The initial state of the App
 export const initialState = fromJS({
@@ -21,8 +21,8 @@ export const initialState = fromJS({
 
 function homeReducer(state = initialState, action) {
   switch (action.type) {
-    case FETCH_TASTEDIVE:
-      return state.set('category', action.category)
+    case UPDATE_STUMBLE:
+      return state.set('category', action.category).set('query', action.query)
     default:
       return state
   }
