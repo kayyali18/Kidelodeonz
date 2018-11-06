@@ -25,6 +25,7 @@ import {
   makeSelectLocation,
 } from 'containers/App/selectors'
 import Button from 'components/MainButton/index'
+import TextWrapper from 'components/MainButton/TextWrapper'
 import Wrapper from './Wrapper'
 import messages from './messages'
 import { loadApi } from '../App/actions'
@@ -53,7 +54,9 @@ export class HomePage extends React.PureComponent {
           src="https://images.unsplash.com/photo-1541367226819-6e682890e7ca?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=33ef8043bd9f782c6661b20f76ae9ccf&auto=format&fit=crop&w=800&q=60"
           onClick={() => this.handleSubmit('movie')}
         >
-          <FormattedMessage {...messages.movies} />
+          <TextWrapper>
+            <FormattedMessage {...messages.movies} />
+          </TextWrapper>
         </Button>
         <Button
           type="submit"

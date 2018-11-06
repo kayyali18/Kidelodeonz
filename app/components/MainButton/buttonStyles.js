@@ -1,10 +1,8 @@
 import { css } from 'styled-components'
 
 const buttonStyles = css`
-  background-image: url(../../images/potato.png);
   display: inline-block;
   box-sizing: border-box;
-  padding: 0.25em 2em;
   text-decoration: none;
   border-radius: 4px;
   -webkit-font-smoothing: antialiased;

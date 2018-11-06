@@ -15,7 +15,7 @@ import Wrapper from './Wrapper'
 
 function Button(props) {
   // Render an anchor tag
-  let button = (
+  const button = (
     <A to={props.path} onClick={props.onClick}>
       <Img src={props.src} alt={props.alt} />
       {Children.toArray(props.children)}
@@ -26,8 +26,6 @@ function Button(props) {
 }
 
 Button.propTypes = {
-  handleRoute: PropTypes.func,
-  href: PropTypes.string,
   onClick: PropTypes.func,
   children: PropTypes.node.isRequired,
   src: PropTypes.string,
