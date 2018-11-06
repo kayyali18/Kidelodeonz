@@ -14,7 +14,7 @@ exports[`<Wrapper /> should match the snapshot 1`] = `
   -webkit-justify-content: space-around;
   -ms-flex-pack: space-around;
   justify-content: space-around;
-  background-color: #402c28;
+  background: linear-gradient(#ff275f,ff040a);
 }
 
 <footer

@@ -24,7 +24,7 @@ import {
   makeSelectError,
   makeSelectLocation,
 } from 'containers/App/selectors'
-import Button from 'components/Button/index'
+import Button from 'components/MainButton/index'
 import Wrapper from './Wrapper'
 import messages from './messages'
 import { loadApi } from '../App/actions'
@@ -49,6 +49,8 @@ export class HomePage extends React.PureComponent {
         <Button
           type="submit"
           value="movie"
+          handleRoute={() => console.log('clicked')}
+          src="https://images.unsplash.com/photo-1541367226819-6e682890e7ca?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=33ef8043bd9f782c6661b20f76ae9ccf&auto=format&fit=crop&w=800&q=60"
           onClick={() => this.handleSubmit('movie')}
         >
           <FormattedMessage {...messages.movies} />
