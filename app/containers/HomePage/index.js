@@ -25,6 +25,7 @@ import {
   makeSelectLocation,
 } from 'containers/App/selectors'
 import Button from 'components/MainButton/index'
+import H1 from 'components/H1'
 import TextWrapper from 'components/MainButton/TextWrapper'
 import Wrapper from './Wrapper'
 import messages from './messages'
@@ -44,15 +45,13 @@ export class HomePage extends React.PureComponent {
   render() {
     return (
       <Wrapper>
-        <h1>
+        <H1>
           <FormattedMessage {...messages.header} />
-        </h1>
+        </H1>
         <Button
           type="submit"
           value="movie"
           path="/movie"
-          alt="g"
-          src="https://images.unsplash.com/photo-1523207911345-32501502db22?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fbd57c46ff580689ccbdbbd82db3b3aa&auto=format&fit=crop&w=1950&q=80"
           onClick={() => this.handleSubmit('movie')}
         >
           <TextWrapper>
@@ -62,8 +61,6 @@ export class HomePage extends React.PureComponent {
         <Button
           type="submit"
           value="game"
-          alt=""
-          src="https://images.unsplash.com/photo-1531525645387-7f14be1bdbbd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4a99fc6885bdf5c5e71eaaabffb5561b&auto=format&fit=crop&w=1100&q=80"
           path="/game"
           onClick={() => this.handleSubmit('game')}
         >
@@ -75,7 +72,6 @@ export class HomePage extends React.PureComponent {
           type="submit"
           value="show"
           path="/show"
-          src="https://images.unsplash.com/photo-1534834128485-00d164a7cf47?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e41d164b42d0011da665fa8aa23ecdb4&auto=format&fit=crop&w=1950&q=80"
           alt=""
           onClick={() => this.handleSubmit('show')}
         >

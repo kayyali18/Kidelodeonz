@@ -26,6 +26,8 @@ function Button(props) {
 }
 
 Button.propTypes = {
+  handleRoute: PropTypes.func,
+  href: PropTypes.string,
   onClick: PropTypes.func,
   children: PropTypes.node.isRequired,
   src: PropTypes.string,
