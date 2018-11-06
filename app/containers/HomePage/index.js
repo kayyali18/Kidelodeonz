@@ -25,6 +25,7 @@ import {
   makeSelectLocation,
 } from 'containers/App/selectors'
 import Button from 'components/Button/index'
+import Wrapper from './Wrapper'
 import messages from './messages'
 import { loadApi } from '../App/actions'
 import reducer from './reducer'
@@ -41,7 +42,7 @@ export class HomePage extends React.PureComponent {
 
   render() {
     return (
-      <section>
+      <Wrapper>
         <h1>
           <FormattedMessage {...messages.header} />
         </h1>
@@ -66,7 +67,7 @@ export class HomePage extends React.PureComponent {
         >
           <FormattedMessage {...messages.shows} />
         </Button>
-      </section>
+      </Wrapper>
     )
   }
 }
