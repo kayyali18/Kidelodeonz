@@ -49,7 +49,7 @@ export class HomePage extends React.PureComponent {
         <Button
           type="submit"
           value="movie"
-          handleRoute={() => console.log('clicked')}
+          path="/movie"
           src="https://images.unsplash.com/photo-1541367226819-6e682890e7ca?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=33ef8043bd9f782c6661b20f76ae9ccf&auto=format&fit=crop&w=800&q=60"
           onClick={() => this.handleSubmit('movie')}
         >
@@ -58,6 +58,7 @@ export class HomePage extends React.PureComponent {
         <Button
           type="submit"
           value="game"
+          path="/game"
           onClick={() => this.handleSubmit('game')}
         >
           <FormattedMessage {...messages.games} />
@@ -65,6 +66,7 @@ export class HomePage extends React.PureComponent {
         <Button
           type="submit"
           value="show"
+          path="/show"
           onClick={() => this.handleSubmit('show')}
         >
           <FormattedMessage {...messages.shows} />

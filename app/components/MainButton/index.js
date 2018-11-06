@@ -11,28 +11,18 @@ import PropTypes from 'prop-types'
 
 import A from './A'
 import Img from './Img'
-import StyledButton from './StyledButton'
 import Wrapper from './Wrapper'
 
 function Button(props) {
   // Render an anchor tag
   let button = (
-    <A href={props.href} onClick={props.onClick}>
+    <A to={props.path} onClick={props.onClick}>
+      <Img src={props.src} alt={props.alt} />
       {Children.toArray(props.children)}
     </A>
   )
 
-  // If the button has a handleRoute Prop, render button instead
-  if (props.handleRoute) {
-    button = (
-      <StyledButton onClick={props.handleRoute}>
-        <Img src={props.src} alt={props.alt} />
-        {Children.toArray(props.children)}
-      </StyledButton>
-    )
-  }
-
-  return <Wrapper>{button}</Wrapper>
+  return <Wrapper to={props.path}>{button}</Wrapper>
 }
 
 Button.propTypes = {
@@ -42,6 +32,7 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
   src: PropTypes.string,
   alt: PropTypes.string,
+  path: PropTypes.string.isRequired,
 }
 
 export default Button
