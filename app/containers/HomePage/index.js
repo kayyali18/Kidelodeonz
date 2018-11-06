@@ -51,7 +51,8 @@ export class HomePage extends React.PureComponent {
           type="submit"
           value="movie"
           path="/movie"
-          src="https://images.unsplash.com/photo-1541367226819-6e682890e7ca?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=33ef8043bd9f782c6661b20f76ae9ccf&auto=format&fit=crop&w=800&q=60"
+          alt="g"
+          src="https://images.unsplash.com/photo-1523207911345-32501502db22?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fbd57c46ff580689ccbdbbd82db3b3aa&auto=format&fit=crop&w=1950&q=80"
           onClick={() => this.handleSubmit('movie')}
         >
           <TextWrapper>
@@ -61,18 +62,26 @@ export class HomePage extends React.PureComponent {
         <Button
           type="submit"
           value="game"
+          alt=""
+          src="https://images.unsplash.com/photo-1531525645387-7f14be1bdbbd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4a99fc6885bdf5c5e71eaaabffb5561b&auto=format&fit=crop&w=1100&q=80"
           path="/game"
           onClick={() => this.handleSubmit('game')}
         >
-          <FormattedMessage {...messages.games} />
+          <TextWrapper>
+            <FormattedMessage {...messages.games} />
+          </TextWrapper>
         </Button>
         <Button
           type="submit"
           value="show"
           path="/show"
+          src="https://images.unsplash.com/photo-1534834128485-00d164a7cf47?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e41d164b42d0011da665fa8aa23ecdb4&auto=format&fit=crop&w=1950&q=80"
+          alt=""
           onClick={() => this.handleSubmit('show')}
         >
-          <FormattedMessage {...messages.shows} />
+          <TextWrapper>
+            <FormattedMessage {...messages.shows} />
+          </TextWrapper>
         </Button>
       </Wrapper>
     )
