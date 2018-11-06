@@ -37,4 +37,25 @@ describe('request', () => {
         })
     })
   })
+
+  describe('stubbing 204 response', () => {
+    // Before each test, pretend we got a succesfful response
+    beforeEach(() => {
+      const res = new Response('', {
+        status: 204,
+        statusText: 'No Content',
+      })
+
+      window.fetch.mockReturnValue(Promise.resolve(res))
+    })
+
+    it('should return null on 204 response', done => {
+      request('thisUrlIsCorrect')
+        .catch(done)
+        .then(json => {
+          expect(json).toBeNull()
+          done()
+        })
+    })
+  })
 })
