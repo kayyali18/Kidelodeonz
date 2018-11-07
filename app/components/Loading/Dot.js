@@ -5,11 +5,11 @@ import BounceAnimation from './animation'
 const Dot = styled.div`
   background-color: black;
   border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  margin: 0 15px;
   /* Animation */
-  animation: ${BounceAnimation} 0.5s linear infinite;
+  animation: ${BounceAnimation} 1s ease-in infinite;
   animation-delay: ${props => props.delay};
 `
 

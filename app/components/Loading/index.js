@@ -8,6 +8,8 @@ const LoadingDots = () => (
     <Dot delay="0s" />
     <Dot delay=".1s" />
     <Dot delay=".2s" />
+    <Dot delay=".3s" />
+    <Dot delay=".4s" />
   </DotWrapper>
 )
 
