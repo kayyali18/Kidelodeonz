@@ -17,6 +17,7 @@ export function* getStumble() {
   const num = Math.floor(Math.random() * 6) + 1
   const stumbles = yield select(makeSelectData())
   if (stumbles) stumble = stumbles[num]
+  else stumble = false
   yield put(displayStumble(stumble))
 }
 

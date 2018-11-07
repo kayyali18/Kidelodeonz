@@ -23,6 +23,7 @@ import {
 } from 'containers/App/selectors'
 import Button from 'components/MainButton/index'
 import H1 from 'components/H1'
+import Loading from 'components/Loading'
 import Wrapper from './Wrapper'
 import { loadApi } from '../App/actions'
 import reducer from './reducer'
@@ -46,6 +47,8 @@ export class DisplayPage extends React.PureComponent {
   }
 
   render() {
+    const { stumble } = this.props
+    if (!stumble) return <Loading />
     return (
       <Wrapper>
         <Helmet>
@@ -55,7 +58,8 @@ export class DisplayPage extends React.PureComponent {
             content="Random content from across the web"
           />
         </Helmet>
-        <iframe title="Youtube Video" src={this.props.apiData.yUrl} />
+        <H1>{this.props.stumble.wTeaser}</H1>
+        <iframe title="Youtube Video" src={this.props.stumble.yUrl} />
       </Wrapper>
     )
   }
