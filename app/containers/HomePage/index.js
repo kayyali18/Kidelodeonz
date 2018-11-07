@@ -12,7 +12,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
-// import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { createStructuredSelector } from 'reselect'
@@ -46,6 +46,10 @@ export class HomePage extends React.PureComponent {
   render() {
     return (
       <Wrapper>
+        <Helmet>
+          <title>Home Page</title>
+          <meta name="description" content="Kidelodeon Homepage" />
+        </Helmet>
         <H1>
           <FormattedMessage {...messages.header} />
         </H1>
