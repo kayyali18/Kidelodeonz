@@ -10,3 +10,5 @@
  */
 
 export const DISPLAY_STUMBLE = 'kidelodeon/Display/DISPLAY_STUMBLE'
+
+export const RUN_STUMBLE_SAGA = 'kidelodeon/Display/RUN_STUMBLE_SAGA'

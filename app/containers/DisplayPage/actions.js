@@ -15,7 +15,7 @@
  *    }
  */
 
-import { DISPLAY_STUMBLE } from './constants'
+import { DISPLAY_STUMBLE, RUN_STUMBLE_SAGA } from './constants'
 
 /**
  * Changes the input field of the form
@@ -24,10 +24,18 @@ import { DISPLAY_STUMBLE } from './constants'
  *
  * @return {object}    An action object with a type of DISPLAY_STUMBLE
  */
-export function displayStumble(category, query) {
+export function displayStumble(stumble) {
   return {
     type: DISPLAY_STUMBLE,
-    category,
-    query,
+    stumble,
+  }
+}
+
+/**
+ * Fires off saga watch for this action type
+ */
+export function stumbleSagaWatcher() {
+  return {
+    type: RUN_STUMBLE_SAGA,
   }
 }

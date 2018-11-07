@@ -7,13 +7,14 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormattedMessage } from 'react-intl'
 import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { createStructuredSelector } from 'reselect'
 
 import injectReducer from 'utils/injectReducer'
+import injectSaga from 'utils/injectSaga'
+import { DAEMON } from 'utils/constants'
 import {
   makeSelectLoading,
   makeSelectError,
@@ -25,8 +26,9 @@ import H1 from 'components/H1'
 import Wrapper from './Wrapper'
 import { loadApi } from '../App/actions'
 import reducer from './reducer'
-import { displayStumble } from './actions'
+import { displayStumble, stumbleSagaWatcher } from './actions'
 import { makeSelectStumble } from './selectors'
+import saga from './saga'
 
 /* eslint-disable react/prefer-stateless-function */
 export class DisplayPage extends React.PureComponent {
@@ -36,41 +38,24 @@ export class DisplayPage extends React.PureComponent {
   }
 
   componentDidMount() {
-    const { apiData } = this.props
-    let num = Math.floor(Math.random() * 6) + 1
-    console.log(apiData[num])
+    const { getStumble, apiData } = this.props
+    if (!apiData) getStumble()
+    setTimeout(() => {
+      getStumble()
+    }, 2000)
   }
 
   render() {
     return (
       <Wrapper>
         <Helmet>
-          <title>Home Page</title>
+          <title>Stumble Page</title>
           <meta
-            name="description"
-            content="A React.js Boilerplate application homepage"
+            name="Stumble page with random result displayed"
+            content="Random content from across the web"
           />
         </Helmet>
-        <H1>Hi</H1>
-        <Button
-          type="submit"
-          value="movie"
-          path="/movie"
-          onClick={() => this.handleSubmit('movie')}
-        />
-        <Button
-          type="submit"
-          value="game"
-          path="/game"
-          onClick={() => this.handleSubmit('game')}
-        />
-        <Button
-          type="submit"
-          value="show"
-          path="/show"
-          alt=""
-          onClick={() => this.handleSubmit('show')}
-        />
+        <iframe title="Youtube Video" src={this.props.apiData.yUrl} />
       </Wrapper>
     )
   }
@@ -78,7 +63,7 @@ export class DisplayPage extends React.PureComponent {
 
 export const mapDispatchToProps = dispatch => ({
   dispatchLoadApi: () => dispatch(loadApi()),
-  categoryClick: stumble => dispatch(displayStumble(stumble)),
+  getStumble: () => dispatch(stumbleSagaWatcher()),
 })
 
 DisplayPage.propTypes = {
@@ -101,8 +86,10 @@ const withConnect = connect(
 )
 
 const withReducer = injectReducer({ key: 'display', reducer })
+const withSaga = injectSaga({ key: 'display', saga, mode: DAEMON })
 
 export default compose(
   withReducer,
+  withSaga,
   withConnect,
 )(DisplayPage)
