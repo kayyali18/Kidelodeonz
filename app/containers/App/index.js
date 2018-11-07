@@ -13,6 +13,7 @@ import styled from 'styled-components'
 import { Switch, Route } from 'react-router-dom'
 
 import HomePage from 'containers/HomePage/Loadable'
+import DisplayPage from 'containers/DisplayPage/Loadable'
 import NotFoundPage from 'containers/NotFoundPage/Loadable'
 import Footer from 'components/Footer'
 import Header from 'components/Header'
@@ -40,6 +41,8 @@ export default function App() {
         <Route exact path="/about" component={HomePage} />
         <Route exact path="/faq" component={HomePage} />
         <Route exact path="/contact" component={HomePage} />
+        <Route exact path="/movie" component={DisplayPage} />
+        <Route exact path="/show" component={DisplayPage} />
         <Route component={NotFoundPage} />
       </Switch>
       <Footer />

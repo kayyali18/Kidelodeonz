@@ -9,6 +9,7 @@ const Wrapper = styled(Link)`
   height: 100%;
   text-align: center;
   position: relative;
+  text-decoration: none;
 `
 
 export default Wrapper
