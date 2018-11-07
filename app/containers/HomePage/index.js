@@ -107,7 +107,7 @@ const withConnect = connect(
 )
 
 const withReducer = injectReducer({ key: 'home', reducer })
-const withSaga = injectSaga({ key: 'home', saga })
+const withSaga = injectSaga({ key: 'home', saga, mode: 'DAEMON' })
 
 export default compose(
   withReducer,

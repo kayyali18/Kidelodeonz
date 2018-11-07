@@ -33,8 +33,10 @@ describe('getSuggestions Saga', () => {
         Results: ['else'],
       },
     }
+
+    const expected = ['something', 'else']
     const putDescriptor = getSuggestionsGenerator.next(response).value
-    expect(putDescriptor).toEqual(put(apiLoaded(response)))
+    expect(putDescriptor).toEqual(put(apiLoaded(expected)))
   })
 
   it('should call the apiLoadingError action if the response errors', () => {
