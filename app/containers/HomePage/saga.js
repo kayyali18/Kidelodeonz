@@ -7,7 +7,6 @@ import { LOAD_API } from 'containers/App/constants'
 import { apiLoaded, apiLoadingError } from 'containers/App/actions'
 
 import request from 'utils/request'
-import { makeSelectLocation } from 'containers/App/selectors'
 import { makeSelectQuery } from 'containers/HomePage/selectors'
 import { tasteDive } from '../../utils/API_keys'
 
