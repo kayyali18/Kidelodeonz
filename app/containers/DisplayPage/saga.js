@@ -2,7 +2,7 @@
  * Gets the stumble from the tasteDive API
  */
 
-import { call, put, select, takeLatest } from 'redux-saga/effects'
+import { put, select, takeLatest } from 'redux-saga/effects'
 
 import { makeSelectData } from 'containers/App/selectors'
 import { RUN_STUMBLE_SAGA } from './constants'

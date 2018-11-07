@@ -21,23 +21,17 @@ import {
   makeSelectLocation,
   makeSelectData,
 } from 'containers/App/selectors'
-import Button from 'components/MainButton/index'
 import H1 from 'components/H1'
 import Loading from 'components/Loading'
 import Wrapper from './Wrapper'
 import { loadApi } from '../App/actions'
 import reducer from './reducer'
-import { displayStumble, stumbleSagaWatcher } from './actions'
+import { stumbleSagaWatcher } from './actions'
 import { makeSelectStumble } from './selectors'
 import saga from './saga'
 
 /* eslint-disable react/prefer-stateless-function */
 export class DisplayPage extends React.PureComponent {
-  handleSubmit = category => {
-    const { categoryClick, apiData } = this.props
-    categoryClick()
-  }
-
   componentDidMount() {
     const { getStumble, apiData } = this.props
     if (!apiData) getStumble()
@@ -71,9 +65,11 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 DisplayPage.propTypes = {
-  loading: PropTypes.bool,
-  error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-  categoryClick: PropTypes.func,
+  // loading: PropTypes.bool,
+  // error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+  apiData: PropTypes.object,
+  getStumble: PropTypes.func,
+  stumble: PropTypes.object,
 }
 
 const mapStateToProps = createStructuredSelector({
