@@ -5,6 +5,8 @@ import { shallow } from 'enzyme'
 import { HomePage, mapDispatchToProps } from '../index'
 import messages from '../messages'
 import { UPDATE_STUMBLE } from '../constants'
+import { loadApi } from '../../App/actions'
+import { updateStumble } from '../actions'
 
 describe('<HomePage />', () => {
   let mockCategoryClick
@@ -22,12 +24,19 @@ describe('<HomePage />', () => {
     ).toEqual(true)
   })
 
-  it.skip('should call categoryClick on click', () => {
-    const renderedComponent = shallow(
-      <HomePage categoryClick={mockCategoryClick} />,
-    )
-    renderedComponent.find('button').simulate('click')
-    expect(mockCategoryClick).toHaveBeenCalled()
+  describe('Menu Item onClick', () => {
+    it('should dispatch dispatchLoadApi when called', () => {
+      const dispatch = jest.fn()
+      const result = mapDispatchToProps(dispatch)
+      result.dispatchLoadApi()
+      expect(dispatch).toHaveBeenCalledWith(loadApi())
+    })
+    it('should dispatch updateStumble when called', () => {
+      const dispatch = jest.fn()
+      const result = mapDispatchToProps(dispatch)
+      result.categoryClick()
+      expect(dispatch).toHaveBeenCalledWith(updateStumble())
+    })
   })
 
   describe('mapDispatchToProps', () => {
