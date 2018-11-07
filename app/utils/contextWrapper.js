@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom'
-import Enzyme, { shallow, mount } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 
 import { shape } from 'prop-types'
 

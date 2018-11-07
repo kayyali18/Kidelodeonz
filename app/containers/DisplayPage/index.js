@@ -67,9 +67,9 @@ export const mapDispatchToProps = dispatch => ({
 DisplayPage.propTypes = {
   // loading: PropTypes.bool,
   // error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-  apiData: PropTypes.object,
+  apiData: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
   getStumble: PropTypes.func,
-  stumble: PropTypes.object,
+  stumble: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
 }
 
 const mapStateToProps = createStructuredSelector({
