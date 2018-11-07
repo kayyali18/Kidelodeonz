@@ -12,11 +12,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
-// import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { createStructuredSelector } from 'reselect'
 
+import { DAEMON } from 'utils/constants'
 import injectReducer from 'utils/injectReducer'
 import injectSaga from 'utils/injectSaga'
 import {
@@ -45,6 +46,10 @@ export class HomePage extends React.PureComponent {
   render() {
     return (
       <Wrapper>
+        <Helmet>
+          <title>Home Page</title>
+          <meta name="description" content="Kidelodeon Homepage" />
+        </Helmet>
         <H1>
           <FormattedMessage {...messages.header} />
         </H1>
@@ -107,7 +112,7 @@ const withConnect = connect(
 )
 
 const withReducer = injectReducer({ key: 'home', reducer })
-const withSaga = injectSaga({ key: 'home', saga })
+const withSaga = injectSaga({ key: 'home', saga, mode: DAEMON })
 
 export default compose(
   withReducer,

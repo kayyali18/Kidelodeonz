@@ -18,7 +18,7 @@ const buttonStyles = css`
   border: 10px solid #fff;
   background-color: #ffffff4d;
   color: #ff4a6e;
-  height: calc(100px + 100 * ((100vw - 320px) / 680));
+  height: calc(50px + 100 * ((100vw - 320px) / 680));
   width: calc(400px + 130 * ((100vw - 320px) / 680));
 
   &:active {

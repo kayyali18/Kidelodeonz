@@ -27,10 +27,16 @@ describe('getSuggestions Saga', () => {
   })
 
   it('should dispatch the apiLoaded action if it requests the data succesfully', () => {
-    const response = ['this is mockdata']
+    const response = {
+      Similar: {
+        Info: ['something'],
+        Results: ['else'],
+      },
+    }
 
+    const expected = ['something', 'else']
     const putDescriptor = getSuggestionsGenerator.next(response).value
-    expect(putDescriptor).toEqual(put(apiLoaded(response)))
+    expect(putDescriptor).toEqual(put(apiLoaded(expected)))
   })
 
   it('should call the apiLoadingError action if the response errors', () => {

@@ -14,13 +14,13 @@ import Wrapper from './Wrapper'
 
 function Button(props) {
   // Render an anchor tag
-  const button = (
-    <A to={props.path} onClick={props.onClick}>
-      {Children.toArray(props.children)}
-    </A>
-  )
+  const button = <A to={props.path}>{Children.toArray(props.children)}</A>
 
-  return <Wrapper to={props.path}>{button}</Wrapper>
+  return (
+    <Wrapper to={props.path} onClick={props.onClick}>
+      {button}
+    </Wrapper>
+  )
 }
 
 Button.propTypes = {
