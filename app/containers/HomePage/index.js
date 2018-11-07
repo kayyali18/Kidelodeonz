@@ -17,6 +17,7 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { createStructuredSelector } from 'reselect'
 
+import { DAEMON } from 'utils/constants'
 import injectReducer from 'utils/injectReducer'
 import injectSaga from 'utils/injectSaga'
 import {
@@ -107,7 +108,7 @@ const withConnect = connect(
 )
 
 const withReducer = injectReducer({ key: 'home', reducer })
-const withSaga = injectSaga({ key: 'home', saga, mode: constants.DAEMON })
+const withSaga = injectSaga({ key: 'home', saga, mode: DAEMON })
 
 export default compose(
   withReducer,
