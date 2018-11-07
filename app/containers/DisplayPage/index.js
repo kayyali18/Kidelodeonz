@@ -52,8 +52,27 @@ export class DisplayPage extends React.PureComponent {
             content="Random content from across the web"
           />
         </Helmet>
-        <H1>{this.props.stumble.wTeaser}</H1>
-        <iframe title="Youtube Video" src={this.props.stumble.yUrl} />
+        <p
+          style={{
+            width: '100%',
+            height: '100%',
+            overflow: 'scroll',
+            fontSize: '20px',
+            lineHeight: '2em',
+            color: '#fff',
+            fontWeight: 'bold',
+            fontStyle: 'italic',
+          }}
+        >
+          {this.props.stumble.wTeaser}
+        </p>
+        <div>
+          <iframe
+            style={{ width: '100%', height: '100%' }}
+            title="Youtube Video"
+            src={this.props.stumble.yUrl}
+          />
+        </div>
       </Wrapper>
     )
   }
